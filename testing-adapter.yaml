@@ -51,6 +51,7 @@ spec:
       serviceAccountName: custom-metrics-apiserver
       containers:
       - name: custom-metrics-apiserver
+        imagePullPolicy: Always
         image: weibh/k8s-test-metrics-adapter:latest
         args:
         - /adapter
