@@ -120,15 +120,17 @@ func (h *httpRequestProvider) valueFor(info provider.CustomMetricInfo) (int64, e
 
 	value := h.values[info]
 	value = rand.Int63() + 10
-	if info.Metric=="tcp_conns"{
-		value = 3
+	if info.Metric == "tcp_conns" {
+		value = 2
 	}
 	h.values[info] = value
-
-	fmt.Println("valueFor ", info.Metric, info.GroupResource, info.Namespaced, info.String())
-	fmt.Println("valueFor ", info.Metric, info.GroupResource, info.Namespaced, info.String())
-	fmt.Println("valueFor ", info.Metric, info.GroupResource, info.Namespaced, info.String())
-	fmt.Println("valueFor ", info.Metric, info.GroupResource, info.Namespaced, info.String())
+	fmt.Println("value",value)
+	fmt.Println("info.Metric", info.Metric)
+	fmt.Println("info.GroupResource", info.GroupResource)
+	fmt.Println("valueFor ", value, info.Metric, info.GroupResource, info.Namespaced, info.String())
+	fmt.Println("valueFor ", value, info.Metric, info.GroupResource, info.Namespaced, info.String())
+	fmt.Println("valueFor ", value, info.Metric, info.GroupResource, info.Namespaced, info.String())
+	fmt.Println("valueFor ", value, info.Metric, info.GroupResource, info.Namespaced, info.String())
 	return value, nil
 }
 
